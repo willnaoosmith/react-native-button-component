@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { View, Text, Animated, StyleSheet, Image } from 'react-native';
-import { AnimatedCircularProgress } from 'react-native-circular-progress';
 import Spinner from 'react-native-spinkit';
 
 const styles = StyleSheet.create({
@@ -147,15 +146,7 @@ class InnerButton extends Component {
         : this.props.imageAnim;
       progress = (
         <Animated.View style={[styles.progress, this.props.progressStyle, progressAnim]}>
-          <AnimatedCircularProgress
-            size={this.props.progressSize}
-            width={this.props.progressWidth}
-            fill={this.props.progressFill}
-            tintColor={this.props.progressTintColor}
-            backgroundColor={this.props.progressBackgroundColor}
-          >
             {progressContent}
-          </AnimatedCircularProgress>
         </Animated.View>
       );
     }
